@@ -9,6 +9,7 @@ namespace Asp_Net_MVC_5.Controllers
 {
     public class CategoriasController : Controller
     {
+        #region Lista de Categorias
         private static IList<Categoria> categorias = new List<Categoria>()
         {
             new Categoria()
@@ -35,8 +36,9 @@ namespace Asp_Net_MVC_5.Controllers
                 Nome = "Desktops"
             }
         };
+        #endregion
 
-        // GET: Categorias
+        #region Métodos GET
         public ActionResult Index()
         {
             return View(categorias);
@@ -46,7 +48,19 @@ namespace Asp_Net_MVC_5.Controllers
         {
             return View();
         }
-        // GET: Create
+
+        public ActionResult Edit(long id)
+        {
+            return View(categorias.Where(m => m.CategoriaId == id).First());
+        }
+
+        public ActionResult Details(long id)
+        {
+            return View(categorias.Where(m => m.CategoriaId == id).First());
+        }
+        #endregion
+
+        #region Métodos POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Categoria categoria)
@@ -56,22 +70,18 @@ namespace Asp_Net_MVC_5.Controllers
             return RedirectToAction("Index");
         }
 
-       
-        public ActionResult Edit(long id)
-        {
-            return View(categorias.Where(m => m.CategoriaId == id).First());
-        }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Categoria categoria)
         {
-            //Método alternativo para edição da categoria
-           // categorias[categorias.IndexOf(categorias.Where(c => c.CategoriaId == categoria.CategoriaId).First())] = categoria;
+            categorias[categorias.IndexOf(categorias.Where(c => c.CategoriaId == categoria.CategoriaId).First())] = categoria;
 
-            categorias.Remove(categorias.Where(c => c.CategoriaId == categoria.CategoriaId).First());
-            categorias.Add(categoria);
+            //Método alternativo para edição da categoria
+            //categorias.Remove(categorias.Where(c => c.CategoriaId == categoria.CategoriaId).First());
+            //categorias.Add(categoria);
             return RedirectToAction("Index");
         }
+        #endregion
+
     }
 }

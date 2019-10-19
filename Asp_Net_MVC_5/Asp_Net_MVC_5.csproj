@@ -100,6 +100,7 @@
     <Content Include="Web.config" />
     <Content Include="Views\Categorias\Create.cshtml" />
     <Content Include="Views\Categorias\Edit.cshtml" />
+    <Content Include="Views\Categorias\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />

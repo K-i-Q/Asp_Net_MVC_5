@@ -7,7 +7,10 @@ namespace Asp_Net_MVC_5.Models
 {
     public class Categoria
     {
+
+        #region Propriedades
         public long CategoriaId { get; set; }
         public string Nome { get; set; }
+        #endregion
     }
 }
