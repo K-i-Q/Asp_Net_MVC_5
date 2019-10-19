@@ -39,25 +39,15 @@ namespace Asp_Net_MVC_5.Controllers
         #endregion
 
         #region Métodos GET
-        public ActionResult Index()
-        {
-            return View(categorias);
-        }
+        public ActionResult Index() => View(categorias);
 
-        public ActionResult Create()
-        {
-            return View();
-        }
+        public ActionResult Create() => View();
 
-        public ActionResult Edit(long id)
-        {
-            return View(categorias.Where(m => m.CategoriaId == id).First());
-        }
+        public ActionResult Edit(long id) => View(categorias.Where(m => m.CategoriaId == id).First());
 
-        public ActionResult Details(long id)
-        {
-            return View(categorias.Where(m => m.CategoriaId == id).First());
-        }
+        public ActionResult Details(long id) => View(categorias.Where(m => m.CategoriaId == id).First());
+
+        public ActionResult Delete(long id) => View(categorias.Where(m => m.CategoriaId == id).First());
         #endregion
 
         #region Métodos POST
@@ -79,6 +69,14 @@ namespace Asp_Net_MVC_5.Controllers
             //Método alternativo para edição da categoria
             //categorias.Remove(categorias.Where(c => c.CategoriaId == categoria.CategoriaId).First());
             //categorias.Add(categoria);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(Categoria categoria)
+        {
+            categorias.Remove(categorias.Where(c => c.CategoriaId == categoria.CategoriaId).First());
             return RedirectToAction("Index");
         }
         #endregion
