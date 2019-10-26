@@ -67,3 +67,7 @@ C:\DESENVOLVIMENTO\Asp_Net_MVC_5\Asp_Net_MVC_5\obj\Debug\Asp_Net_MVC_5.csproj.Co
 C:\DESENVOLVIMENTO\Asp_Net_MVC_5\Asp_Net_MVC_5\obj\Debug\Asp_Net_MVC_5.csproj.CopyComplete
 C:\DESENVOLVIMENTO\Asp_Net_MVC_5\Asp_Net_MVC_5\obj\Debug\Asp_Net_MVC_5.dll
 C:\DESENVOLVIMENTO\Asp_Net_MVC_5\Asp_Net_MVC_5\obj\Debug\Asp_Net_MVC_5.pdb
+C:\DESENVOLVIMENTO\Asp_Net_MVC_5\Asp_Net_MVC_5\bin\EntityFramework.dll
+C:\DESENVOLVIMENTO\Asp_Net_MVC_5\Asp_Net_MVC_5\bin\EntityFramework.SqlServer.dll
+C:\DESENVOLVIMENTO\Asp_Net_MVC_5\Asp_Net_MVC_5\bin\EntityFramework.xml
+C:\DESENVOLVIMENTO\Asp_Net_MVC_5\Asp_Net_MVC_5\bin\EntityFramework.SqlServer.xml
